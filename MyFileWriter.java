@@ -1,4 +1,5 @@
 import java.io.*;
+import java.io.File;
 import java.nio.file.*;
 import java.nio.charset.StandardCharsets;
 
@@ -58,6 +59,7 @@ public class MyFileWriter {
         //     e.printStackTrace();
         // }
 
+        
         writeFile(".facebookMarketPlacePassword.txt", "Chance is a bot");
         writeFile("tryToFindMe.txt", "darn it", ".superSecretHiddenFolder");
     }
@@ -71,6 +73,11 @@ public class MyFileWriter {
     }
 
     public static void writeFile(String name, String contents, String folderPath){
+        File dir = new File(System.getProperty("user.dir")+ "/" + folderPath);
+        if(!dir.mkdir()){
+            System.out.println("folder titled: '" + folderPath + "' may already exist.");
+        }
+        dir.mkdir();
         try (PrintWriter writer = new PrintWriter(folderPath+ "/" + name)){
             writer.print(contents);
         } catch (IOException e){
