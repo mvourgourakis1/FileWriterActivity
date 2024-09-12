@@ -85,4 +85,9 @@ public class MyFileWriter {
         }
     }
 
+    public static void printFileSize(String filename){
+        //implement my print filesize
+        
+    }
+
 }
