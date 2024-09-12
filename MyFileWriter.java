@@ -62,6 +62,8 @@ public class MyFileWriter {
         
         writeFile(".facebookMarketPlacePassword.txt", "Chance is a bot");
         writeFile("tryToFindMe.txt", "darn it", ".superSecretHiddenFolder");
+        printFileSize(".facebookMarketPlacePassword.txt");
+
     }
 
     public static void writeFile(String name, String contents){
@@ -87,7 +89,9 @@ public class MyFileWriter {
 
     public static void printFileSize(String filename){
         //implement my print filesize
-        
+        File toGetSize = new File(filename);
+        long toPrint = toGetSize.length();
+        System.out.println(toPrint + " Bytes");
     }
 
 }
